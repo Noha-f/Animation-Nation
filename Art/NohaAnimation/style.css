@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@keyframes fly-to-top{
+    0%{
+        
+        transform: translateY(0px);   
+    }
+
+    40%{
+        
+        transform: translateY(-260px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes balloon-pop{
+    from{
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes sad{
+    to{
+        visibility: visible;
+    }
+}
+
+
+
+.header{
+    height:75px;
+    display: flex;
+}
+
+.header div:not(:last-child){
+    border-right: 5px solid grey;
+}
+
+.header__pins{
+    width:10%;
+
+}
+
+body{
+    height:100vh;
+    width:100vw;
+    background-color: #F6F6F6;
+    overflow: hidden;
+
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    height:calc(100vh - 75px);
+    position:relative;
+    align-items:center;
+}
+
+.balloon{
+    margin-top: auto;
+    position:relative;
+    animation: fly-to-top 4s;
+}
+
+.balloon >span:nth-child(1){
+    position:absolute;
+    bottom:0;
+    transform: rotate(54deg);
+    transform-origin: bottom center;
+}
+.balloon >span:nth-child(1)>.balloon__body{
+    background-color: yellow;
+}
+
+
+.balloon >span:nth-child(2){
+    position:absolute;
+    bottom:0;
+    transform: rotate(27deg);
+    transform-origin: bottom center;    
+}
+.balloon >span:nth-child(2)>.balloon__body{
+    background-color: green;
+    animation:balloon-pop 0.05s 1.2s forwards;
+}
+
+
+.balloon >span:nth-child(3){
+    position:absolute;
+    bottom:0;
+}
+.balloon >span:nth-child(3)>.balloon__body{
+    background-color: blue;
+    animation:balloon-pop 0.05s .8s forwards;
+}
+
+
+.balloon >span:nth-child(4){
+    position:absolute;
+    bottom:0;
+    transform: rotate(-27deg);
+    transform-origin: bottom center;
+}
+.balloon >span:nth-child(4)>.balloon__body{
+    background-color: orangered;
+    animation:balloon-pop 0.05s 1.2s forwards;
+}
+
+
+.balloon >span:nth-child(5){
+    transform: rotate(-54deg);
+    transform-origin: bottom center;
+}
+.balloon >span:nth-child(5)>.balloon__body{
+    background-color: magenta;
+}
+
+
+.balloon__piece{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.balloon__body{
+    width:90px;
+    height:110px;
+    border-radius: 50%;
+}
+
+.balloon__rope{
+    width:45px;
+    height: 160px;
+    border-right: 3px solid black;
+}
+
+.note{
+    background-color: #ffffff;
+    width:150px;
+    padding:10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 4px 4px lightgray;
+    animation: fly-to-top 4s;
+    
+}
+
+.note__first,
+.note__second{
+    animation: balloon-pop 0s 1.77s forwards;
+}
+
+.note__third{
+    font-size: 2rem;
+    visibility: hidden;
+    background-color: red;
+    animation:sad 0.1s 1.77s forwards;
+}
+

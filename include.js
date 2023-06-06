@@ -6526,6 +6526,13 @@ let cards = [
     author: 'Marion',
     githubLink: 'https://github.com/marionjudy13'
   },
+  {
+    artName: 'NohaAnimation',
+    pageLink: './Art/NohaAnimation/index.html',
+    imageLink: './Art/NohaAnimation/NohaAnimation.gif',
+    author: 'Noha',
+    githubLink: 'https://github.com/Noha-f'
+  }
 ];
 
 // +--------------------------------------------------------------------------------+
